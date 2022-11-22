@@ -15,9 +15,9 @@
 
   <div class="container mt-5">
 
-    <h2>Editar sua prancha</h2>
+    <h2>Editar longboards</h2>
   
-  <form action="/pranchinhas/edit/<%=body.id%> " method="post">
+  <form action="/longboards/edit/<%=body.id%> " method="post">
 
    <div class="mb-3">
     <label for="formGroupExampleInput" class="form-label">Modelo</label>
@@ -34,6 +34,16 @@
     <input class="fileld form-control" name="volume" placeholder="Volume" required value="<%= body.volume %> " >
   </div>
   
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Description:</label>
+    <input class="fileld form-control" name="Description" placeholder="Description" required value="<%= body.Description %> " >
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Número do Vendedor:</label>
+    <input class="fileld form-control" name="NumberVendedor" placeholder="NumberVendedor" required value="<%= body.NumberVendedor %> " >
+  </div>
+
   <label for="formGroupExampleInput2" class="form-label">Valor</label>
   <div class="input-group mb-3">
     <span class="input-group-text">R$:</span>
@@ -46,13 +56,9 @@
 
 <br>
 
-<a class="btn btn-secondary" href="/pranchinhas/">Voltar Pranchinhas</a>
+<a class="btn btn-secondary" href="/longboards/">Voltar fishs</a>
 
  <br>
-
-  
-  
-
 
 
 </body>

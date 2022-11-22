@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+
+<nav>
+
+
+  <h1>LongBoards</h1>
+  
+  <a href="/longboards/add">
+    <div type="button"  class="btn btn-success">
+     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/></svg> 
+     Publicar LongBoard
+</div>
+</a>
+
+
+</nav>  
+    
+  
+<main> 
+        
+<div class="cardbox">
+          <% for(let i= 0; i < longs.length; i++) { %>
+          <div id='<%=longs[i]._id%>'>
+          <form method="post" action="/Longs?_method=DELETE">
+   <div class="card">
+
+   <img class=" imgPrancha " src="data:image/jpeg;base64,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"   alt="...">
+   <div class="card-body">
+
+          <h4>Marca: <%=longs[i].nome%></h4>
+
+          <div class="card-text">Medidas: <%=longs[i].medidas%></div>
+          <div class="card-text">Volume: <%=longs[i].volume%></div>
+          <div class="card-text">Descrição: <%=longs[i].Description%></div>
+          <div class="card-text">Número do vendedor: <%=longs[i].NumberVendedor%></div>
+          <div class="card-text">Valor: <%=longs[i].valor%></div>
+          <input name="id" value="<%=longs[i]._id%>" hidden>
+          <a class="btn btn-primary" href="/longboards/edit/<%=longs[i]._id%>">Editar</a>
+          <button class="btn btn-danger" type="submit">Delete</button>
+   </div>
+   </div>
+
+          </form>
+          </div>
+          <% } %> 
+   </div>
+
+</main>
+
+
+<style>
+
+.card{
+   border-radius: 35px;
+   display: block;
+   background-color: rgb(153, 153, 153);
+   width: 18rem;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.cardbox{
+   margin: 2rem;
+}
+
+nav{
+   text-align: center;
+}
+
+.imgPrancha{
+
+   
+   padding: 5px;
+   margin: auto;
+   border-radius: 35px;
+   width: 100%;
+   height: 18rem;
+
+}
+
+.addPranchinha{
+
+   margin-top: 2rem;
+
+}
+
+h1{
+   margin-bottom:2rem;
+   margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+   
+   .cardbox{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+h1{
+   margin-bottom:2rem;
+   margin-top: 1rem;
+}
+
+main{
+   max-width: 100%;
+   height: 100%;
+
+}
+
+.card{
+   width: 20rem;
+   margin-left: 2rem;
+   margin-top: 1.5rem;
+
+}
+
+
+}
+
+
+</style>
+
+</body>
+</html>

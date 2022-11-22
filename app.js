@@ -9,6 +9,8 @@ const port = 3000;
 // Importando Rotas
 const HomeRoute = require('./src/routes/HomeRoute') // importando as Rotas da documentação da Home
 const PranchinhasRoute = require('./src/routes/PranchinhasRoute') // importando as Rotas da documentação das pranchinhas
+const FishRoute = require('./src/routes/FishRoute') 
+const LongRoute = require('./src/routes/LongRoute')
 // -------------
 
 
@@ -34,6 +36,8 @@ app.set('views', path.join(__dirname,"./src/teamplates")  )
 // Rotas 
 app.use('/', HomeRoute);
 app.use('/pranchinhas',PranchinhasRoute); // app.use para todos métodos http /Pranchinhas e passando as Rotas que pranchinhas usa
+app.use('/fishs', FishRoute);
+app.use('/longboards', LongRoute )
 // app.use('*', ( req , res ) => res.render('Error404PagNanEncontrada.ejs', {error: false } ));
 // -------------
 
