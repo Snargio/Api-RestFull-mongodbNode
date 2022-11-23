@@ -9,8 +9,7 @@ const PranchinhasController = require('../controllers/PranchinhasController') //
 
 
 router.get('/', PranchinhasController.AllPranchinhas); // a ordem é importante.
-// router.get('/:nome', PranchinhasController.redirect ); // passando dentro da rota o cointroller dessa rota e o objeto do controle que irá ser usado
-router.get('/edit/:id', PranchinhasController.loadpranchinha)
+router.get('/edit/:id', PranchinhasController.loadpranchinha);
 router.get('/add', ( req , res ) => res.render('addpranchinhas', {error: false} )); // route normal só para retornar hello world na tela 
 
 

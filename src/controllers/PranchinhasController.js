@@ -55,7 +55,6 @@ const deletePranchinha = async ( req , res ) => {
 
     try {
         let pranchinha = await Pranchinhas.findByIdAndDelete(id)  
-    //   res.send(id)   
          res.redirect('/pranchinhas/')
     } catch (error) {
        res.status(404).send(error);
