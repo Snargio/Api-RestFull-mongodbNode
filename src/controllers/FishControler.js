@@ -11,8 +11,6 @@ const addFishs = async ( req , res ) => {
    
     try {
        await fishs.save() // com await vai esperar os dados e vai salvar os novos dados no documento pranchinhas
-       
-       
        res.redirect('/Fishs/')
     } catch (error) {
        res.render('index', {error, body: req.body });
@@ -38,8 +36,7 @@ const addFishs = async ( req , res ) => {
        }
    
        try {
-           let fishs = await Fishs.findByIdAndDelete(id)  
-       //   res.send(id)   
+            await Fishs.findByIdAndDelete(id)  
             res.redirect('/Fishs/')
        } catch (error) {
           res.status(404).send(error);
@@ -76,7 +73,7 @@ const addFishs = async ( req , res ) => {
        }
    
        try {
-          let doc = await Fishs.updateOne({ _id: id }, fish)
+          await Fishs.updateOne({ _id: id }, fish)
           res.redirect('/fishs/')
        } catch (error) {
           res.render('editfishs', {error, body: req.body });

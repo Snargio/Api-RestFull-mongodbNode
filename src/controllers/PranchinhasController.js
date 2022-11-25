@@ -54,7 +54,7 @@ const deletePranchinha = async ( req , res ) => {
     }
 
     try {
-        let pranchinha = await Pranchinhas.findByIdAndDelete(id)  
+         await Pranchinhas.findByIdAndDelete(id)  
          res.redirect('/pranchinhas/')
     } catch (error) {
        res.status(404).send(error);
@@ -76,7 +76,7 @@ const loadpranchinha = async ( req , res ) => {
 };
 
 const editpranchinhas = async ( req , res ) => {
-     
+    
     let pranchinha = {};
     pranchinha.nome = req.body.nome;
     pranchinha.medidas = req.body.medidas;
@@ -89,8 +89,8 @@ const editpranchinhas = async ( req , res ) => {
     }
 
     try {
-       let doc = await Pranchinhas.updateOne({ _id: id }, pranchinha)
-       res.redirect('/pranchinhas/')
+         await Pranchinhas.updateOne({ _id: id }, pranchinha)
+         res.redirect('/pranchinhas/')
     } catch (error) {
        res.render('editpranchinhas', {error, body: req.body });
     }
