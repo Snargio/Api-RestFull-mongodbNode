@@ -38,8 +38,7 @@ const addlongs = async ( req , res ) => {
        }
    
        try {
-           let longs = await Longs.findByIdAndDelete(id)  
-       //   res.send(id)   
+            await Longs.findByIdAndDelete(id)  
             res.redirect('/longboards/')
        } catch (error) {
           res.status(404).send(error);
@@ -76,8 +75,8 @@ const addlongs = async ( req , res ) => {
        }
    
        try {
-          let doc = await Longs.updateOne({ _id: id }, fish)
-          res.redirect('/longboards/')
+             await Longs.updateOne({ _id: id }, long)
+             res.redirect('/longboards/')
        } catch (error) {
           res.render('editLong', {error, body: req.body });
        }

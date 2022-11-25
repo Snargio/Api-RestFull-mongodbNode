@@ -2,11 +2,12 @@
 const express = require('express') // importando express e o router pq vamos usar 
 const router = express.Router()
 var methodOverride = require('method-override') // importei o methodo overrider para mandar o DELETE.
-router.use(methodOverride('_method'));
+
 
 const PranchinhasController = require('../controllers/PranchinhasController') // importando o controller da pranchinhas
 
 
+router.use(methodOverride('_method'));
 
 router.get('/', PranchinhasController.AllPranchinhas); // a ordem é importante.
 router.get('/edit/:id', PranchinhasController.loadpranchinha);

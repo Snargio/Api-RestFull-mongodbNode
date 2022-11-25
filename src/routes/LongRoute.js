@@ -1,11 +1,12 @@
 const express = require('express') // importando express e o router pq vamos usar 
 const router = express.Router()
 var methodOverride = require('method-override') // importei o methodo overrider para mandar o DELETE.
-router.use(methodOverride('_method'));
+
 
 const LongControler = require('../controllers/LongControler') // importando o controller da pranchinhas
 
 
+router.use(methodOverride('_method'));
 
 router.get('/', LongControler.Alllongs); // a ordem é importante.
 router.get('/edit/:id', LongControler.loadlongs);
@@ -18,7 +19,7 @@ router.post('/edit/:id', express.urlencoded({ extended: true }), LongControler.e
 
 
 router.delete('/:id', LongControler.deletelongs )
-router.delete('/', express.urlencoded({extended: true}), LongControler.deletelongs )
+router.delete('/', express.urlencoded({ extended: true }), LongControler.deletelongs )
 
 
 module.exports = router  
