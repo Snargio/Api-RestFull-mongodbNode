@@ -41,13 +41,14 @@
    <div class="card-body">
 
           <h4>Marca: <%=fishs[i].nome%></h4>
-
-          <div class="card-text">Medidas: <%=fishs[i].medidas%></div>
-          <div class="card-text">Volume: <%=fishs[i].volume%></div>
-          <div class="card-text">Descrição: <%=fishs[i].Description%></div>
-          <div class="card-text">Número do vendedor: <%=fishs[i].NumberVendedor%></div>
-          <div class="card-text">Valor: <%=fishs[i].valor%></div>
+   <div class="cardsindoor" >
+          <div id="descPadron" class="card-text">Medidas: <%=fishs[i].medidas%></div>
+          <div id="descPadron" class="card-text">Volume: <%=fishs[i].volume%></div>
+          <div id="descPadron" class="card-text">Descrição: <%=fishs[i].Description%></div>
+          <div id="descPadron" class="card-text">Número do vendedor: <%=fishs[i].NumberVendedor%></div>
+          <div id="value" class="card-text">Valor: <%=fishs[i].valor%></div>
           <input name="id" value="<%=fishs[i]._id%>" hidden>
+   </div>
           <a class="btn btn-primary" href="/fishs/edit/<%=fishs[i]._id%>">Editar</a>
           <button class="btn btn-danger" type="submit">Delete</button>
    </div>
@@ -62,6 +63,27 @@
 
 
 <style>
+
+#value{
+   background-color: rgb(249, 255, 217);
+   padding: 5px;
+   border-radius: 15px;
+   margin-top: 5px;
+}
+
+#descPadron{
+   background-color: rgb(188, 224, 255);
+   padding: 5px;
+   border-radius: 15px;
+   margin-top: 5px;
+}
+
+.cardsindoor{
+   background-color: rgb(202, 202, 202);
+   padding: 5px;
+   border-radius: 15px;
+   margin-bottom: 10px;
+}
 
 .card{
    border-radius: 35px;
